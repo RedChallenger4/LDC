@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.theducksneezes.com.ldc.GameMenuActivity">
+
+    <Button
+        android:id="@+id/whiteBoardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WhiteBoard"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <Button
+        android:id="@+id/blocksButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blocks"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="325dp" />
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="app.theducksneezes.com.ldc.MainMenuActivity"
+    tools:showIn="@layout/app_bar_main_menu">
+
+    <Button
+        android:id="@+id/goOutsideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:layout_toLeftOf="@+id/connectButton"
+        android:layout_toStartOf="@+id/connectButton"
+        android:onClick="openToGoOutside"
+        android:text="Go Outside" />
+
+    <Button
+        android:id="@+id/playGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/goOutsideButton"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:onClick="openToGameActivity"
+        android:text="Play a Game" />
+
+    <Button
+        android:id="@+id/watchMoviesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/goOutsideButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/goOutsideButton"
+        android:layout_marginBottom="85dp"
+        android:onClick="openToWatchMovies"
+        android:text="Watch Movies" />
+
+    <Button
+        android:id="@+id/scheduleEventButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/playGameButton"
+        android:layout_alignStart="@+id/playGameButton"
+        android:layout_alignTop="@+id/watchMoviesButton"
+        android:elevation="1dp"
+        android:onClick="openToSchedule"
+        android:text="Schedule an Event" />
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="openToConnect"
+        android:text="Connect" />
+
+
+</RelativeLayout>
