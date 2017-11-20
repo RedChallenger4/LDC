@@ -10,6 +10,10 @@
         android:id="@+id/whiteBoardButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="152dp"
+        android:onClick="openToWhiteBoard"
         android:text="WhiteBoard"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="94dp" />
@@ -18,6 +22,9 @@
         android:id="@+id/blocksButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
         android:text="Blocks"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="325dp" />
