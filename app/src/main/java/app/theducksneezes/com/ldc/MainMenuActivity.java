@@ -43,12 +43,6 @@ public class MainMenuActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    // opens to Connecting activity
-    public void openToConnect(View view){
-        Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
-        startActivity(intent);
-    }
-
     // opens to Go Outside Activity
     public void openToGoOutside(View view){
         Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
