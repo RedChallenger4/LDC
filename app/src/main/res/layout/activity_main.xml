@@ -4,28 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="app.theducksneezes.com.ldc.MainActivity">
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@color/colorPrimary"
-        android:onClick="openToMenu"
-        android:text="LDC" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
-        android:contentDescription="Long Distance Connections"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="76dp"
+        android:src="@drawable/ldc_logosplash"
         android:onClick="openToMenu"
-        android:visibility="visible"
-        app:srcCompat="@mipmap/LDC_LogoSplash" />
-
+        android:background="@color/colorPrimary"
+     />
 </RelativeLayout>
