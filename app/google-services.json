@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "70957699183",
+    "firebase_url": "https://long-distance-contact.firebaseio.com",
+    "project_id": "long-distance-contact",
+    "storage_bucket": "long-distance-contact.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70957699183:android:0fbae7d6b7e4a035",
+        "android_client_info": {
+          "package_name": "app.theducksneezes.com.ldc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70957699183-t94k7fd974rq6rc9ok76frhommejcddo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4hKUyAt02k1EAEwAv6KjIFtBQpZ1qQFA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

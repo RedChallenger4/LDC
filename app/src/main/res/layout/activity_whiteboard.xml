@@ -7,7 +7,7 @@
     android:background="#ffffff"
     tools:context="app.theducksneezes.com.ldc.WhiteboardActivity">
 
-    <app.theducksneezes.com.ldc
+    <app.theducksneezes.com.ldc.CanvasView
         android:layout_width="match_parent"
         android:id="@+id/canvas"
         android:layout_alignParentTop="true"
