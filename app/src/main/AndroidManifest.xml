@@ -2,13 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.theducksneezes.com.ldc">
 
-    <!-- Permissions -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-
-    <!-- Permissions -->
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,7 +23,12 @@
         <activity android:name=".GameMenuActivity" />
         <activity android:name=".GoOutsideMenuActivity" />
         <activity android:name=".WatchMoviesMainMenuActivity" />
-        <activity android:name=".WhiteboardActivity"></activity>
+        <activity android:name=".WhiteboardActivity"/>
+        <activity android:name=".ConnectMenuActivity"/>
+        <activity android:name=".PhoneCallActivity"/>
+        <activity android:name=".VideoCallActivity"/>
+        <activity android:name=".TextActivity"/>
+        <activity android:name=".DisconnectActivity"/>
     </application>
 
 </manifest>

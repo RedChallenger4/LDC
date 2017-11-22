@@ -8,18 +8,6 @@
     tools:context="app.theducksneezes.com.ldc.MainMenuActivity"
     tools:showIn="@layout/app_bar_main_menu">
 
-
-    <Button
-        android:id="@+id/connectButton"
-        android:layout_width="164dp"
-        android:layout_height="164dp"
-        android:layout_centerInParent="true"
-        android:background="@color/colorPrimary"
-        android:text="Connect"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
-        android:textAllCaps="false"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,8 +27,7 @@
                 android:onClick="openToGameActivity"
                 android:text="Play a Game"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/scheduleButton"
@@ -50,8 +37,7 @@
                 android:onClick="openToSchedule"
                 android:text="Schedule"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -68,8 +54,7 @@
                 android:onClick="openToGoOutside"
                 android:text="Go Outside"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/watchButton"
@@ -79,9 +64,20 @@
                 android:onClick="openToWatchMovies"
                 android:text="Watch Movies"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="164dp"
+        android:layout_height="164dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary"
+        android:onClick="openToConnect"
+        android:text="Connect"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
 
 </RelativeLayout>
