@@ -17,7 +17,8 @@
         android:background="@color/colorPrimary"
         android:text="Connect"
         android:textColor="#ffffff"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textAllCaps="false"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +37,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToGameActivity"
-                android:text="Play" />
+                android:text="Play a Game"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
 
             <Button
                 android:id="@+id/scheduleButton"
@@ -44,7 +48,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToSchedule"
-                android:text="Schedule" />
+                android:text="Schedule"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -59,7 +66,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToGoOutside"
-                android:text="Go" />
+                android:text="Go Outside"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
 
             <Button
                 android:id="@+id/watchButton"
@@ -67,7 +77,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToWatchMovies"
-                android:text="Watch" />
+                android:text="Watch Movies"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
         </LinearLayout>
     </LinearLayout>
 
