@@ -15,9 +15,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="100dp"
+        android:layout_margin="90dp"
         android:background="@color/colorPrimary"
         android:onClick="openToMenu"
-        android:scaleType="centerCrop"
+        android:scaleType="center"
         android:src="@drawable/ldc_logosplash" />
 </RelativeLayout>
