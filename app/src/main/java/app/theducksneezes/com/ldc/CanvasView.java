@@ -27,7 +27,7 @@ public class CanvasView extends View {
     private static final float TOLERANCE = 5;
     Context context;
 
-    public CanvasView(Context context, @Nullable AttributeSet attrs) {
+    public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
 
