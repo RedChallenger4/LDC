@@ -22,7 +22,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToVideoCall"
-                android:text="Video Call" />
+                android:text="Video Call"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                />
 
             <Button
                 android:id="@+id/phoneCallButton"
@@ -30,7 +34,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToPhoneCall"
-                android:text="Phone Call" />
+                android:text="Phone Call"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -45,7 +53,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToText"
-                android:text="Text" />
+                android:text="Text"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                />
 
             <Button
                 android:id="@+id/disconnectButton"
@@ -53,7 +65,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="openToDisconnect"
-                android:text="Disconnect" />
+                android:text="Disconnect"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                />
 
         </LinearLayout>
     </LinearLayout>
