@@ -19,7 +19,7 @@
             android:onClick="openToHiking"
             android:text="Hiking"
             android:textAllCaps="false"
-            android:textColor="#000000"
+            android:textColor="#364652"
             android:textSize="24sp"
             android:layout_margin="10dp"
             android:background="#F2F5E3"
@@ -33,7 +33,7 @@
             android:onClick="openToBiking"
             android:text="Biking"
             android:textAllCaps="false"
-            android:textColor="#000000"
+            android:textColor="#364652"
             android:textSize="24sp"
             android:layout_margin="10dp"
             android:background="#F2F5E3"
@@ -49,7 +49,7 @@
             android:onClick="openToCreateYourOwn"
             android:text="Create Your Own"
             android:textAllCaps="false"
-            android:textColor="#000000"
+            android:textColor="#364652"
             android:textSize="24sp" />
     </LinearLayout>
 </RelativeLayout>
