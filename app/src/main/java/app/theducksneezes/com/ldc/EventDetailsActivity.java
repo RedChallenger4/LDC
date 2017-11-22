@@ -5,17 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class CalendarActivity extends AppCompatActivity {
+public class EventDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        setContentView(R.layout.activity_event_details);
     }
 
-    // opens to Pick Date Activity
-    public void openToPickDate(View view){
-        Intent intent = new Intent(getApplicationContext(), PickDateActivity.class );
+    // opens to Calendar Activity
+    public void openToCalendar(View view){
+        Intent intent = new Intent(getApplicationContext(), CalendarActivity.class );
         startActivity(intent);
     }
 }

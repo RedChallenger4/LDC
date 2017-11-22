@@ -1,21 +1,22 @@
 package app.theducksneezes.com.ldc;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class CalendarActivity extends AppCompatActivity {
+public class PickDateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        setContentView(R.layout.activity_pick_date);
     }
 
-    // opens to Pick Date Activity
-    public void openToPickDate(View view){
-        Intent intent = new Intent(getApplicationContext(), PickDateActivity.class );
+    // opens to Start Time Activity
+    public void openToStartTime(View view){
+        Intent intent = new Intent(getApplicationContext(), StartTimeActivity.class );
         startActivity(intent);
     }
 }

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="app.theducksneezes.com.ldc.CalendarActivity">
+    tools:context="app.theducksneezes.com.ldc.PickDateActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,11 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:headerBackground="@color/colorPrimary" />
         </LinearLayout>
 
         <LinearLayout
@@ -31,12 +36,12 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/toPickDateButton"
+                    android:id="@+id/toStartTimeButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
-                    android:onClick="openToPickDate"
-                    android:text="Schedule Event" />
+                    android:onClick="openToStartTime"
+                    android:text="Choose Date" />
 
             </LinearLayout>
 

@@ -30,7 +30,10 @@
         <activity android:name=".TextActivity"/>
         <activity android:name=".DisconnectActivity"/>
         <activity android:name=".CalendarActivity"/>
-        <activity android:name=".ScheduleActivity"/>
+        <activity android:name=".PickDateActivity"/>
+        <activity android:name=".StartTimeActivity"/>
+        <activity android:name=".EndTimeActivity"/>
+        <activity android:name=".EventDetailsActivity"/>
     </application>
 
 </manifest>
