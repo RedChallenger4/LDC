@@ -20,7 +20,6 @@
             android:name=".MainMenuActivity"
             android:label="@string/title_activity_main_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ConnectActivity" />
         <activity android:name=".GameMenuActivity" />
         <activity android:name=".GoOutsideMenuActivity" />
         <activity android:name=".WatchMoviesMainMenuActivity" />

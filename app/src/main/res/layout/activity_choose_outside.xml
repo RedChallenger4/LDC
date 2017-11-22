@@ -6,41 +6,33 @@
     android:layout_height="match_parent"
     tools:context="app.theducksneezes.com.ldc.GoOutsideMenuActivity">
 
-    <Button
-        android:id="@+id/hikingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bikingButton"
-        android:layout_alignLeft="@+id/bikingButton"
-        android:layout_alignStart="@+id/bikingButton"
-        android:layout_marginBottom="87dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:onClick="openToHiking"
-        android:text="Hiking"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="105dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/bikingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="openToBiking"
-        android:text="Biking"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="231dp" />
+        <Button
+            android:id="@+id/hikeButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:onClick="openToHiking"
+            android:text="Hike" />
 
-    <Button
-        android:id="@+id/createYourOwnButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="103dp"
-        android:onClick="openToCreateYourOwn"
-        android:text="Create your Own"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="364dp" />
+        <Button
+            android:id="@+id/bikeButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:onClick="openToBiking"
+            android:text="Bike" />
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:onClick="openToCreateYourOwn"
+            android:text="Create Your Own" />
+    </LinearLayout>
 </RelativeLayout>

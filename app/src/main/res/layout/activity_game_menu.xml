@@ -6,26 +6,25 @@
     android:layout_height="match_parent"
     tools:context="app.theducksneezes.com.ldc.GameMenuActivity">
 
-    <Button
-        android:id="@+id/whiteBoardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="152dp"
-        android:onClick="openToWhiteBoard"
-        android:text="WhiteBoard"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="94dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/blocksButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
-        android:text="Blocks"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="325dp" />
+        <Button
+            android:id="@+id/whiteboardButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="openToWhiteBoard"
+            android:text="Whiteboard" />
+
+        <Button
+            android:id="@+id/blocksButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="openToBlocks"
+            android:text="Blocks" />
+    </LinearLayout>
 </RelativeLayout>

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">LDC</string>
-    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="app_name">Long Distance Connections</string>
+    <string name="title_activity_main_menu">Home</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
