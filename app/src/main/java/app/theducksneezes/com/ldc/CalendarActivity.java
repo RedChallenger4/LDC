@@ -13,9 +13,9 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar);
     }
 
-    // opens to Pick Date Activity
-    public void openToPickDate(View view){
-        Intent intent = new Intent(getApplicationContext(), PickDateActivity.class );
+    // opens to Start Time Activity
+    public void openToStartTime(View view){
+        Intent intent = new Intent(getApplicationContext(), StartTimeActivity.class );
         startActivity(intent);
     }
 }

@@ -16,6 +16,35 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/eventName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Event Name" />
+
+            <EditText
+                android:id="@+id/eventNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/eventDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="Description" />
+
+            <EditText
+                android:id="@+id/eventDescInput"
+                android:layout_width="match_parent"
+                android:layout_height="199dp"
+                android:capitalize="sentences"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true" />
+
         </LinearLayout>
 
         <LinearLayout
