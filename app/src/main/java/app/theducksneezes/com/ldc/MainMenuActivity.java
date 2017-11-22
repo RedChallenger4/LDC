@@ -45,7 +45,7 @@ public class MainMenuActivity extends AppCompatActivity
 
     // opens to Go Outside Activity
     public void openToGoOutside(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), GoOutsideMenuActivity.class );
         startActivity(intent);
     }
 
@@ -57,7 +57,7 @@ public class MainMenuActivity extends AppCompatActivity
 
     // opens to Watch Movies Activity
     public void openToWatchMovies(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), WatchMoviesMainMenuActivity.class );
         startActivity(intent);
     }
     // opens to Schedule Activity
