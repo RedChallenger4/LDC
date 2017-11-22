@@ -27,7 +27,10 @@
                 android:onClick="openToGameActivity"
                 android:text="Play a Game"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:background="#F2F5E3"
+                />
 
             <Button
                 android:id="@+id/scheduleButton"
@@ -37,7 +40,10 @@
                 android:onClick="openToSchedule"
                 android:text="Schedule"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:background="#F2F5E3"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -54,7 +60,10 @@
                 android:onClick="openToGoOutside"
                 android:text="Go Outside"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:background="#F2F5E3"
+                />
 
             <Button
                 android:id="@+id/watchButton"
@@ -64,7 +73,10 @@
                 android:onClick="openToWatchMovies"
                 android:text="Watch Movies"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:background="#F2F5E3"
+                />
         </LinearLayout>
     </LinearLayout>
 
