@@ -18,4 +18,10 @@ public class CalendarActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), StartTimeActivity.class );
         startActivity(intent);
     }
+
+    // opens to Event List Activity
+    public void openToEventList(View view){
+        Intent intent = new Intent(getApplicationContext(), EventListActivity.class );
+        startActivity(intent);
+    }
 }
