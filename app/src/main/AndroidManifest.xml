@@ -29,6 +29,8 @@
         <activity android:name=".VideoCallActivity"/>
         <activity android:name=".TextActivity"/>
         <activity android:name=".DisconnectActivity"/>
+        <activity android:name=".CalendarActivity"/>
+        <activity android:name=".ScheduleActivity"/>
     </application>
 
 </manifest>

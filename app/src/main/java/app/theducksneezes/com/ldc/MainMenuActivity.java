@@ -53,7 +53,7 @@ public class MainMenuActivity extends AppCompatActivity
     }
     // opens to Schedule Activity
     public void openToSchedule(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), CalendarActivity.class );
         startActivity(intent);
     }
 
