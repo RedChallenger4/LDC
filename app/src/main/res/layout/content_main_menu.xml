@@ -80,16 +80,20 @@
         </LinearLayout>
     </LinearLayout>
 
+
+
     <Button
-        android:id="@+id/connectButton"
-        android:layout_width="164dp"
-        android:layout_height="164dp"
-        android:layout_centerInParent="true"
-        android:background="@color/colorPrimary"
-        android:onClick="openToConnect"
+        android:id ="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Connect"
+        android:background="@drawable/button_circle"
+        android:layout_centerInParent="true"
+        android:onClick="openToConnect"
+        android:padding="15dp"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        />
 
 </RelativeLayout>
