@@ -85,19 +85,17 @@
     </LinearLayout>
 
 
-
     <Button
-        android:id ="@+id/connectButton"
+        android:id="@+id/connectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Connect"
-        android:background="@drawable/button_circle"
         android:layout_centerInParent="true"
+        android:background="@drawable/button_circle"
         android:onClick="openToConnect"
         android:padding="15dp"
+        android:text="Connect"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="24sp"
-        />
+        android:textSize="24sp" />
 
 </RelativeLayout>
