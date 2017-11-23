@@ -16,24 +16,27 @@
             android:id="@+id/myVideosButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="24dp"
             android:layout_weight="1"
+            android:background="@drawable/button_rounded_top"
             android:text="My Videos"
             android:textAllCaps="false"
-            android:layout_margin="10dp"
-            android:background="#F2F5E3"
-            android:textSize="24sp"
-            />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/netflixButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
+            android:background="@drawable/button_rounded_bottom"
             android:text="Netflix"
             android:textAllCaps="false"
-            android:layout_margin="10dp"
-            android:background="#F2F5E3"
-            android:textSize="24sp"
-            />
+            android:textSize="24sp" />
     </LinearLayout>
 </RelativeLayout>
