@@ -102,14 +102,20 @@ public class MainMenuActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Intent intent = new Intent(getApplicationContext(), GameMenuActivity.class );
+            startActivity(intent);
         } else if (id == R.id.nav_gallery) {
-
+            Intent intent = new Intent(getApplicationContext(), CalendarActivity.class );
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
-
+            Intent intent = new Intent(getApplicationContext(), GoOutsideMenuActivity.class );
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
-
+            Intent intent = new Intent(getApplicationContext(), WatchMoviesMainMenuActivity.class );
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
-
+            Intent intent = new Intent(getApplicationContext(), ConnectMenuActivity.class );
+            startActivity(intent);
         } else if (id == R.id.nav_send) {
 
         }
