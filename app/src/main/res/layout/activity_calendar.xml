@@ -27,28 +27,45 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2.5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#728073">
 
             <Button
                 android:id="@+id/toEventViewButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_rounded"
                 android:onClick="openToEventList"
-                android:text="View Events" />
+                android:text="View Events"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2.5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#728073"
+            >
 
             <Button
                 android:id="@+id/toPickDateButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:onClick="openToStartTime"
-                android:text="Schedule Event" />
+                android:text="Schedule Event"
+                android:background="@drawable/button_rounded"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                />
 
         </LinearLayout>
 
