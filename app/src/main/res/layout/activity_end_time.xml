@@ -25,7 +25,10 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="45dp"
                 android:layout_marginRight="45dp"
-                android:layout_marginTop="17dp" />
+                android:layout_marginTop="17dp"
+                android:headerBackground="@color/colorPrimary"
+                android:numbersSelectorColor="@color/colorPrimary"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -45,7 +48,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:onClick="openToEventDetails"
-                    android:text="Choose End Time" />
+                    android:text="Choose End Time"
+                    android:background="@drawable/button_rounded"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    />
 
             </LinearLayout>
 
