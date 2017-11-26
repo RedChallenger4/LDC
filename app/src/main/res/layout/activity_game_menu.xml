@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#728073"
-    tools:context="app.theducksneezes.com.ldc.GameMenuActivity">
+    tools:context="app.theducksneezes.com.ldc.GameMenuActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
