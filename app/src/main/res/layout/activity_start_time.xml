@@ -23,16 +23,22 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="45dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginLeft="45dp"
                 android:layout_marginRight="45dp"
-                android:layout_marginTop="17dp" />
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:headerBackground="@color/colorPrimary"
+                android:numbersSelectorColor="@color/colorPrimary" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="6"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#728073"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,9 +49,16 @@
                     android:id="@+id/toEndTimeButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="4"
+                    android:background="@drawable/button_rounded"
                     android:onClick="openToEndTime"
-                    android:text="Choose Start Time" />
+                    android:text="Choose Start Time"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 

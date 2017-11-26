@@ -20,12 +20,18 @@
                 android:id="@+id/eventName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="24dp"
                 android:text="Event Name" />
 
             <EditText
                 android:id="@+id/eventNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
@@ -33,6 +39,8 @@
                 android:id="@+id/eventDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:paddingTop="25dp"
                 android:text="Description" />
 
@@ -40,6 +48,8 @@
                 android:id="@+id/eventDescInput"
                 android:layout_width="match_parent"
                 android:layout_height="199dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:capitalize="sentences"
                 android:ems="10"
                 android:inputType="textMultiLine"
@@ -51,7 +61,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="6"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#728073"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,9 +74,16 @@
                     android:id="@+id/completeScheduleButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/button_rounded"
                     android:onClick="openToCalendar"
-                    android:text="Finish" />
+                    android:text="Finish"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 

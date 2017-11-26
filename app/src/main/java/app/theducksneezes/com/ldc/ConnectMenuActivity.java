@@ -21,19 +21,22 @@ public class ConnectMenuActivity extends AppCompatActivity {
 
     // opens to Text Activity
     public void openToText(View view){
-        Intent intent = new Intent(getApplicationContext(), TextActivity.class );
+        Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+        intent.putExtra("title", "Chat");
         startActivity(intent);
     }
 
     // opens to Phone Call Activity
     public void openToPhoneCall(View view){
-        Intent intent = new Intent(getApplicationContext(), PhoneCallActivity.class );
+        Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+        intent.putExtra("title", "Phonecall");
         startActivity(intent);
     }
 
     // opens to Video Call Activity
     public void openToVideoCall(View view){
-        Intent intent = new Intent(getApplicationContext(), VideoCallActivity.class );
+        Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+        intent.putExtra("title", "Videocall");
         startActivity(intent);
     }
 
