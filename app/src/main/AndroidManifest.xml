@@ -25,9 +25,6 @@
         <activity android:name=".WatchMoviesMainMenuActivity" />
         <activity android:name=".WhiteboardActivity" />
         <activity android:name=".ConnectMenuActivity" />
-        <activity android:name=".PhoneCallActivity" />
-        <activity android:name=".VideoCallActivity" />
-        <activity android:name=".TextActivity" />
         <activity android:name=".DisconnectActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".StartTimeActivity" />
