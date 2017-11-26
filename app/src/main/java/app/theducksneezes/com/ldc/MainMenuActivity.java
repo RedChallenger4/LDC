@@ -116,8 +116,6 @@ public class MainMenuActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent(getApplicationContext(), ConnectMenuActivity.class );
             startActivity(intent);
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
