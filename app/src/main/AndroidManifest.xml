@@ -23,17 +23,21 @@
         <activity android:name=".GameMenuActivity" />
         <activity android:name=".GoOutsideMenuActivity" />
         <activity android:name=".WatchMoviesMainMenuActivity" />
-        <activity android:name=".WhiteboardActivity"/>
-        <activity android:name=".ConnectMenuActivity"/>
-        <activity android:name=".PhoneCallActivity"/>
-        <activity android:name=".VideoCallActivity"/>
-        <activity android:name=".TextActivity"/>
-        <activity android:name=".DisconnectActivity"/>
-        <activity android:name=".CalendarActivity"/>
-        <activity android:name=".StartTimeActivity"/>
-        <activity android:name=".EndTimeActivity"/>
-        <activity android:name=".EventDetailsActivity"/>
-        <activity android:name=".EventListActivity"/>
+        <activity android:name=".WhiteboardActivity" />
+        <activity android:name=".ConnectMenuActivity" />
+        <activity android:name=".PhoneCallActivity" />
+        <activity android:name=".VideoCallActivity" />
+        <activity android:name=".TextActivity" />
+        <activity android:name=".DisconnectActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".StartTimeActivity" />
+        <activity android:name=".EndTimeActivity" />
+        <activity android:name=".EventDetailsActivity" />
+        <activity android:name=".EventListActivity" />
+        <activity
+            android:name=".ConnectActivity"
+            android:label="@string/title_activity_connect"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
