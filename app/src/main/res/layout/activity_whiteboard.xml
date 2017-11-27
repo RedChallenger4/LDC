@@ -42,15 +42,16 @@
         android:onClick="sendImage"
         android:text="Send" />
 
-    <!-- This button is to refresh canvas to see if other user's canvas is made -->
+    <!-- This button is to sync canvas to see if other user's canvas is made -->
     <Button
-        android:id="@+id/refreshButton"
+        android:id="@+id/syncButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/clearCanvasButton"
         android:layout_alignBottom="@+id/clearCanvasButton"
         android:layout_centerHorizontal="true"
-        android:text="Refresh" />
+        android:onClick="syncCanvas"
+        android:text="sync" />
 
 
 </RelativeLayout>

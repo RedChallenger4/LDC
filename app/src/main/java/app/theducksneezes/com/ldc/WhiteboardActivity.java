@@ -2,6 +2,7 @@ package app.theducksneezes.com.ldc;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.media.Image;
@@ -19,13 +20,17 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -222,10 +227,38 @@ public class WhiteboardActivity extends AppCompatActivity {
     }*/
 
     // checks if other user has canvas ready
-    public void refreshCanvas(View view){
-        Bitmap otherImage = null;
-        try{
+    public void syncCanvas(View view){
+        //StorageReference storageRef = storage.getReference();
+        StorageReference gsRef = storage.getReferenceFromUrl("gs://long-distance-contact.appspot.com/test.png");
 
+        gsRef.getBytes(Long.MAX_VALUE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                // Use the bytes to display the image
+                try{
+
+                    //Toast.makeText(getApplicationContext(), Integer.toString(bytes.length), Toast.LENGTH_LONG).show();
+                    Bitmap bMap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                    Toast.makeText(getApplicationContext(), "Loading", Toast.LENGTH_LONG).show();
+
+                    // stuck here
+                    Canvas newCanvas = new Canvas(bMap);
+
+
+
+                } catch(Exception e){
+                    Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_LONG).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Toast.makeText(getApplicationContext(), "Needs work", Toast.LENGTH_LONG).show();
+            }
+        });
+        /*Bitmap otherImage = null;
+        try{
             // will have to be bitmap from firebase
 
         } catch (Exception e){
@@ -243,7 +276,7 @@ public class WhiteboardActivity extends AppCompatActivity {
         //newCanvas.drawColor(Color.WHITE);
 
         // draws in the bitmap
-        newCanvas.drawBitmap(otherImage, 0, 0, null);
+        newCanvas.drawBitmap(otherImage, 0, 0, null);*/
 
     }
 }
