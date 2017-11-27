@@ -7,6 +7,8 @@
     android:background="#ffffff"
     tools:context="app.theducksneezes.com.ldc.WhiteboardActivity">
 
+    <!-- replace background attribute w/ image? -->
+
     <app.theducksneezes.com.ldc.CanvasView
         android:layout_width="match_parent"
         android:id="@+id/canvas"
@@ -18,8 +20,37 @@
         android:id="@+id/clearCanvasButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sendButton"
+        android:layout_alignBottom="@+id/sendButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:onClick="clearCanvas"
+        android:text="CLEAR CANVAS" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:onClick="sendImage"
+        android:text="Send" />
+
+    <!-- This button is to refresh canvas to see if other user's canvas is made -->
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/clearCanvasButton"
+        android:layout_alignBottom="@+id/clearCanvasButton"
         android:layout_centerHorizontal="true"
-        android:text="CLEAR CANVAS"
-        android:onClick="clearCanvas"/>
+        android:text="Refresh" />
+
+
 </RelativeLayout>
