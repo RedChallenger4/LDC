@@ -8,15 +8,15 @@
             android:title="Play a Game" />
         <item
             android:id="@+id/nav_schedule"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_menu_agenda"
             android:title="Schedule" />
         <item
             android:id="@+id/nav_outside"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@android:drawable/ic_menu_mapmode"
             android:title="Go Outside" />
         <item
             android:id="@+id/nav_movie"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_media_play"
             android:title="Watch a Movie" />
     </group>
 
