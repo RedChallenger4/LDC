@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class GameMenuActivity extends AppCompatActivity {
+public class GameMenuActivity extends AppCompatActivity
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,8 @@ public class GameMenuActivity extends AppCompatActivity {
 
     // opens to Blocks Activity
     public void openToBlocks(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
+
 }

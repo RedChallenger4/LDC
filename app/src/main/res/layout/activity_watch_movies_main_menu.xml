@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#728073"
     tools:context="app.theducksneezes.com.ldc.WatchMoviesMainMenuActivity">
 
     <LinearLayout
@@ -15,14 +16,27 @@
             android:id="@+id/myVideosButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="24dp"
             android:layout_weight="1"
-            android:text="My Videos" />
+            android:background="@drawable/button_rounded_top"
+            android:text="My Videos"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/netflixButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:text="Netflix" />
+            android:background="@drawable/button_rounded_bottom"
+            android:text="Netflix"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
     </LinearLayout>
 </RelativeLayout>

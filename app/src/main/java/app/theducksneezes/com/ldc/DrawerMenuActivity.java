@@ -2,8 +2,6 @@ package app.theducksneezes.com.ldc;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,24 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainMenuActivity extends AppCompatActivity
+public class DrawerMenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_drawer_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -62,13 +51,13 @@ public class MainMenuActivity extends AppCompatActivity
     }
     // opens to Schedule Activity
     public void openToSchedule(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), CalendarActivity.class );
         startActivity(intent);
     }
 
     // opens to Connect Activity
     public void openToConnect(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), ConnectMenuActivity.class );
         startActivity(intent);
     }
 
@@ -111,18 +100,30 @@ public class MainMenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_game) {
+            Intent intent = new Intent(getApplicationContext(), GameMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_schedule) {
+            Intent intent = new Intent(getApplicationContext(), CalendarActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_outside) {
+            Intent intent = new Intent(getApplicationContext(), GoOutsideMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_movie) {
+            Intent intent = new Intent(getApplicationContext(), WatchMoviesMainMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_chat) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Chat");
+            startActivity(intent);
+        } else if (id == R.id.nav_call) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Phonecall");
+            startActivity(intent);
+        } else if (id == R.id.nav_video) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Videocall");
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

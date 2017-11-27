@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/steveSwainNav"
+        android:paddingLeft="16dp"
+        android:paddingTop="24dp"
+        android:text="Greg Swain"
+        android:textColor="@color/colorTextDark"
+        android:textSize="26sp" />
+
+    <ImageView
+        android:id="@+id/steveSwainNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        app:srcCompat="@drawable/greg_swain_avatar_sml" />
+
+
+    <TextView
+        android:id="@+id/disconnectNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userName"
+        android:layout_marginLeft="16dp"
+        android:layout_toEndOf="@+id/steveSwainNav"
+        android:layout_toRightOf="@+id/steveSwainNav"
+        android:text="Disconnect"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/navChat_ic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/disconnectNav"
+        android:layout_alignStart="@+id/disconnectNav"
+        android:layout_below="@+id/disconnectNav"
+        android:layout_marginTop="4dp"
+        app:srcCompat="@mipmap/ic_chat_red_24px" />
+
+    <TextView
+        android:id="@+id/chatNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disconnectNav"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/navChat_ic"
+        android:layout_toRightOf="@+id/navChat_ic"
+        android:text="Chat"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+</RelativeLayout>
