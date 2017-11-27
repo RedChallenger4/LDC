@@ -112,8 +112,17 @@ public class DrawerMenuActivity extends AppCompatActivity
         } else if (id == R.id.nav_movie) {
             Intent intent = new Intent(getApplicationContext(), WatchMoviesMainMenuActivity.class );
             startActivity(intent);
-        } else if (id == R.id.nav_connect) {
-            Intent intent = new Intent(getApplicationContext(), ConnectMenuActivity.class );
+        } else if (id == R.id.nav_chat) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Chat");
+            startActivity(intent);
+        } else if (id == R.id.nav_call) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Phonecall");
+            startActivity(intent);
+        } else if (id == R.id.nav_video) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Videocall");
             startActivity(intent);
         }
 
