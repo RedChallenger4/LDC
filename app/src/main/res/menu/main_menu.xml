@@ -9,6 +9,11 @@
         android:icon="@mipmap/ic_hamburger_white_24px">
         <menu>
             <item
+                android:id="@+id/homeButton"
+                android:icon="@mipmap/ic_home_red_24px"
+                android:title="Home"
+                app:showAsAction="ifRoom" />
+            <item
                 android:id="@+id/nav_game"
                 android:icon="@android:drawable/ic_menu_edit"
                 app:showAsAction="ifRoom"

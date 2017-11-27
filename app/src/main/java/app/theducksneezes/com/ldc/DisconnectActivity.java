@@ -28,7 +28,10 @@ public class DisconnectActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.nav_game) {
+        if (id == R.id.homeButton) {
+            Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_game) {
             Intent intent = new Intent(getApplicationContext(), GameMenuActivity.class );
             startActivity(intent);
         } else if (id == R.id.nav_schedule) {
