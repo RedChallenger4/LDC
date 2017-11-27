@@ -76,16 +76,59 @@ public class WhiteboardActivity extends AppCompatActivity {
         canvasView.clearCanvas();
     }
 
+
+    public void sendImage(View v){
+        // sets up canvas based on what is drawn
+        CanvasView content = canvasView;
+        content.setDrawingCacheEnabled(true);
+        content.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+
+        // creates the bitmap file from the canvas/drawing
+        Bitmap bitmap = content.getDrawingCache();
+
+        // saves the image of the drawing
+        saveImage(bitmap);
+
+        // where things might get funky
+    }
+
+    // note: to get this method to work, you have to manually grant permissions
+    // in settings for this app.
+    public void saveImage(Bitmap bm){
+
+        File file = Environment.getExternalStorageDirectory();
+        File newFile = new File(file, "test.jpg");
+
+        try{
+            FileOutputStream fileOutputStream = new FileOutputStream(newFile);
+            bm.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+            fileOutputStream.flush();
+            fileOutputStream.close();
+            Toast.makeText(WhiteboardActivity.this,
+                    "Save Bitmap: " + fileOutputStream.toString(),
+                    Toast.LENGTH_LONG).show();
+
+        } catch(Exception e){
+            e.printStackTrace();
+            Toast.makeText(WhiteboardActivity.this,
+                    "Something wrong: " + e.getMessage(),
+                    Toast.LENGTH_LONG).show();
+        }
+    }
+    /*
     // saves the image, we need to find out how to send it
     public void sendImage(View v){
 
-        /* first we have to SAVE canvas into bitmap */
+        *//* first we have to SAVE canvas into bitmap *//*
         // sets up saving canvas
         //View content = (CanvasView) findViewById(R.id.canvas);
         CanvasView content = canvasView;
 
         // info to save Canvas
         // https://stackoverflow.com/questions/7401432/drawing-on-canvas-and-save-image
+
+        // didn't work, so try this:
+        // http://android-er.blogspot.com/2015/12/open-image-free-draw-something-on.html
         content.setDrawingCacheEnabled(true);
         content.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
 
@@ -104,9 +147,12 @@ public class WhiteboardActivity extends AppCompatActivity {
         StorageReference storageRef = storage.getReference("Filename/" + path + "/image.png");
 
         try {
+
             // creates stream to send drawing
-            file.createNewFile();
+            //file.createNewFile();
             //ostream = new FileOutputStream(file);
+
+            Log.i("TAG","Jumpers. Jumpers. JUMPERS!!!!!!");
             baos = new ByteArrayOutputStream();
 
             // compresses file
@@ -130,13 +176,14 @@ public class WhiteboardActivity extends AppCompatActivity {
 
             // sends the file out
             //ostream.flush();
-
+            baos.flush();
             // closes the output stream
             //ostream.close();
+            baos.close();
 
             Toast.makeText(getApplicationContext(), "image saved", Toast.LENGTH_LONG).show();
 
-            /* sends bitmap to Firebase */
+            *//* sends bitmap to Firebase *//*
             // possibly the code to share projects (check later)
             //Intent shareIntent = new Intent(Intent.ACTION_SEND);
             //shareIntent.setType("image/jpeg");
@@ -151,7 +198,7 @@ public class WhiteboardActivity extends AppCompatActivity {
             // lets user know of error
             Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_LONG).show();
         }
-    }
+    }*/
 
     // checks if other user has canvas ready
     public void refreshCanvas(View view){
