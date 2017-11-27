@@ -15,7 +15,7 @@ public class ConnectMenuActivity extends AppCompatActivity {
 
     // opens to Main Menu
     public void openToMenu(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
 

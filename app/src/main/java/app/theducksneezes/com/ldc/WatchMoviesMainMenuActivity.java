@@ -15,13 +15,13 @@ public class WatchMoviesMainMenuActivity extends AppCompatActivity {
 
     // opens to MyVideos
     public void openToMyVideos(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
 
     // opens to Netflix
     public void openToNetflix(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
 }

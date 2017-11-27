@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
 
     // opens to main menu
     public void openToMenu(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
 

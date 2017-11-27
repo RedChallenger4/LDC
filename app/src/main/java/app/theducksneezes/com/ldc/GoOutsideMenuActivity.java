@@ -15,19 +15,19 @@ public class GoOutsideMenuActivity extends AppCompatActivity {
 
     // opens to Hiking Activity
     public void openToHiking(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
 
     // opens to Biking Activity
     public void openToBiking(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
 
     // opens to Create your Own Activity
     public void openToCreateYourOwn(View view){
-        Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class );
+        Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
         startActivity(intent);
     }
 }
