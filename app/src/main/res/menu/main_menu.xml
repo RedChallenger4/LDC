@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="101"
-        android:title="@string/action_settings"
-        app:showAsAction="never" >
-        <menu />
+    <group>
+        <item
+            android:id="@+id/nav_game"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="Play a Game" />
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Schedule" />
+        <item
+            android:id="@+id/nav_outside"
+            android:icon="@android:drawable/ic_menu_mapmode"
+            android:title="Go Outside" />
+        <item
+            android:id="@+id/nav_movie"
+            android:icon="@android:drawable/ic_media_play"
+            android:title="Watch a Movie" />
+    </group>
+    <item android:title="Connect">
+        <menu>
+            <item
+                android:id="@+id/nav_chat"
+                android:icon="@mipmap/ic_chat_24px"
+                android:title="Chat" />
+            <item
+                android:id="@+id/nav_call"
+                android:icon="@mipmap/ic_call_black_24px"
+                android:title="Phone Call" />
+            <item
+                android:id="@+id/nav_video"
+                android:icon="@mipmap/ic_video_call_black_24px"
+                android:title="Video Call" />
+        </menu>
     </item>
     <group android:orderInCategory="102" />
 
