@@ -243,7 +243,9 @@ public class WhiteboardActivity extends AppCompatActivity {
 
                     // stuck here
                     Canvas newCanvas = new Canvas(bMap);
+                    newCanvas.drawBitmap(bMap, 0, 0, null);
 
+                    canvasView.draw(newCanvas);
 
 
                 } catch(Exception e){
