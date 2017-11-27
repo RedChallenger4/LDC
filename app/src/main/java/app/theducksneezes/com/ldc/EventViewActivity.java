@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -13,8 +14,8 @@ import android.widget.TextView;
 
 public class EventViewActivity extends AppCompatActivity {
 
-    DatabaseHelper db = new DatabaseHelper(this);
     Event event;
+    DatabaseHelper db = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +40,15 @@ public class EventViewActivity extends AppCompatActivity {
         textView = this.findViewById(R.id.eventEndData);
         textView.setText(((Integer) event.getEndHour()).toString() + ":" + ((Integer) event.getEndMin()).toString());
 
-    }
+        Button deleteButton = findViewById(R.id.deleteButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.deleteEvent(event.getName(), event.getDesc());
 
-    // deletes Event
-    public void deleteEvent (View view) {
-        db.deleteEvent(event.getName(), event.getDesc());
-        this.openToEventList(view);
+                openToEventList(view);
+            }
+        });
     }
 
     // opens to Event List Activity

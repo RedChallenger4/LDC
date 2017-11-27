@@ -17,13 +17,27 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/toCalendarFromList"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:onClick="openToCalendar"
-            android:text="Back to Calendar" />
+            android:layout_weight="4"
+            android:background="#728073"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/toCalendarFromList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_rounded"
+                android:onClick="openToCalendar"
+                android:text="Back to Calendar"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

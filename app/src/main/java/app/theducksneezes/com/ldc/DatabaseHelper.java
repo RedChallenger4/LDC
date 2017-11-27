@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "DatabaseHelper";
     private static final String TABLE_NAME = "eventTable";
     private static final String COL1 = "name";
     private static final String COL2 = "desc";
@@ -64,9 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void deleteEvent(String name, String desc) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
-                + COL1 + " = '" + name + "'" +
-                " AND " + COL2 + " = '" + desc + "'";
-        db.rawQuery(query, null);
+
+        db.delete(TABLE_NAME, "name = ? AND desc = ?", new String[] {name, desc});
     }
 }
