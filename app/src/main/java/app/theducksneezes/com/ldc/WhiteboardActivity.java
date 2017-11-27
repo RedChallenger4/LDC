@@ -90,6 +90,27 @@ public class WhiteboardActivity extends AppCompatActivity {
         saveImage(bitmap);
 
         // where things might get funky
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] data = baos.toByteArray();
+
+        StorageReference storageRef = storage.getReference();
+
+        StorageReference testRef = storageRef.child("test.png");//works if test.png is saved
+
+        UploadTask uploadTask = testRef.putBytes(data);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                Uri downloadUrl = taskSnapshot.getDownloadUrl();
+            }
+        });
     }
 
     // note: to get this method to work, you have to manually grant permissions
@@ -97,7 +118,7 @@ public class WhiteboardActivity extends AppCompatActivity {
     public void saveImage(Bitmap bm){
 
         File file = Environment.getExternalStorageDirectory();
-        File newFile = new File(file, "test.jpg");
+        File newFile = new File(file, "test.png");
 
         try{
             FileOutputStream fileOutputStream = new FileOutputStream(newFile);
