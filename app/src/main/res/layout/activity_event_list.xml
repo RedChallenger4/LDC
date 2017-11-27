@@ -5,4 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="app.theducksneezes.com.ldc.EventListActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/eventList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/toCalendarFromList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:onClick="openToCalendar"
+            android:text="Back to Calendar" />
+    </LinearLayout>
+
 </RelativeLayout>

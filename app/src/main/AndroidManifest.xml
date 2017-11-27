@@ -35,6 +35,7 @@
             android:name=".ConnectActivity"
             android:label="@string/title_activity_connect"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".EventViewActivity" />
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CalendarView;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -15,7 +16,10 @@ public class CalendarActivity extends AppCompatActivity {
 
     // opens to Start Time Activity
     public void openToStartTime(View view){
+        CalendarView calendar = (CalendarView) findViewById(R.id.calendarView);
+        long date = calendar.getDate();
         Intent intent = new Intent(getApplicationContext(), StartTimeActivity.class );
+        intent.putExtra("date", date);
         startActivity(intent);
     }
 
