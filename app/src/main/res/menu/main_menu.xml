@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <group>
+    <item
+        android:id="@+id/empty"
+        android:title="options"
+        android:orderInCategory="101"
+        app:showAsAction="always"
+        android:icon="@mipmap/ic_hamburger_white_24px">
+        <menu>
+
         <item
             android:id="@+id/nav_game"
             android:icon="@android:drawable/ic_menu_edit"
+            app:showAsAction="ifRoom"
             android:title="Play a Game" />
         <item
             android:id="@+id/nav_schedule"
@@ -18,7 +26,6 @@
             android:id="@+id/nav_movie"
             android:icon="@android:drawable/ic_media_play"
             android:title="Watch a Movie" />
-    </group>
     <item android:title="Connect">
         <menu>
             <item
@@ -36,5 +43,7 @@
         </menu>
     </item>
     <group android:orderInCategory="102" />
+        </menu>
+    </item>
 
 </menu>
