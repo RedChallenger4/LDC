@@ -100,19 +100,19 @@ public class DrawerMenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_game) {
             Intent intent = new Intent(getApplicationContext(), GameMenuActivity.class );
             startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_schedule) {
             Intent intent = new Intent(getApplicationContext(), CalendarActivity.class );
             startActivity(intent);
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_outside) {
             Intent intent = new Intent(getApplicationContext(), GoOutsideMenuActivity.class );
             startActivity(intent);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_movie) {
             Intent intent = new Intent(getApplicationContext(), WatchMoviesMainMenuActivity.class );
             startActivity(intent);
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_connect) {
             Intent intent = new Intent(getApplicationContext(), ConnectMenuActivity.class );
             startActivity(intent);
         }
