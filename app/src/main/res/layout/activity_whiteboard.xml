@@ -24,7 +24,7 @@
 
     <Button
         android:id="@+id/clearCanvasButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/sendButton"
         android:layout_alignBottom="@+id/sendButton"
@@ -61,4 +61,13 @@
         android:layout_marginRight="34dp"
         android:onClick="syncCanvas"
         android:text="sync" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        android:layout_above="@+id/clearCanvasButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>

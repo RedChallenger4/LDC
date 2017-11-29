@@ -15,8 +15,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +29,7 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -39,6 +43,8 @@ import java.util.Map;
 public class WhiteboardActivity extends AppCompatActivity {
 
     private CanvasView canvasView;
+    private ImageView imageView;
+
     FirebaseStorage storage;
 
 
@@ -49,6 +55,7 @@ public class WhiteboardActivity extends AppCompatActivity {
 
         // sets canvas view
         canvasView = (CanvasView) findViewById(R.id.canvas);
+        imageView = (ImageView) findViewById(R.id.imageView);
 
         storage = FirebaseStorage.getInstance();
 
@@ -80,7 +87,10 @@ public class WhiteboardActivity extends AppCompatActivity {
 
     // clears the canvas
     public void clearCanvas(View v){
+
         canvasView.clearCanvas();
+        // if there is an image
+        imageView.setImageResource(0);
     }
 
 
@@ -231,9 +241,35 @@ public class WhiteboardActivity extends AppCompatActivity {
     // checks if other user has canvas ready
     public void syncCanvas(View view){
         //StorageReference storageRef = storage.getReference();
-        StorageReference gsRef = storage.getReferenceFromUrl("gs://long-distance-contact.appspot.com/test.png");
+        StorageReference gsRef = storage.getReferenceFromUrl("gs://long-distance-contact.appspot.com");
+        //StorageReference gsRef = storage.getReferenceFromUrl("https://firebasestorage.googleapis.com/v0/b/long-distance-contact.appspot.com/o/test.png?alt=media&token=30ec2985-bbbe-466a-9915-f717ffbdfcf2");
 
-        gsRef.getBytes(Long.MAX_VALUE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+        gsRef.child("test.png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // Got the download URL for 'users/me/profile.png'
+
+                Picasso.with(WhiteboardActivity.this)
+                        .load(uri)
+                        .into(imageView);
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
+        // test with Glide
+        // https://firebase.google.com/docs/storage/android/download-files
+        /* Glide.with(this)
+                .using(new FirebaseImageLoader())
+                .load(gsRef)
+                .into(imageView);*/
+
+        Toast.makeText(getApplicationContext(), "Loading", Toast.LENGTH_LONG).show();
+
+        /* gsRef.getBytes(Long.MAX_VALUE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
                 // Use the bytes to display the image
@@ -260,7 +296,7 @@ public class WhiteboardActivity extends AppCompatActivity {
                 // Handle any errors
                 Toast.makeText(getApplicationContext(), "Needs work", Toast.LENGTH_LONG).show();
             }
-        });
+        }); */
         /*Bitmap otherImage = null;
         try{
             // will have to be bitmap from firebase
