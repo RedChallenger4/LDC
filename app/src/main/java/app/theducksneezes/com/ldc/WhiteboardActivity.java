@@ -113,7 +113,7 @@ public class WhiteboardActivity extends AppCompatActivity {
 
         StorageReference storageRef = storage.getReference();
 
-        StorageReference testRef = storageRef.child("test.png");//works if test.png is saved
+        StorageReference testRef = storageRef.child("test_sent.png");//works if test.png is saved
 
         UploadTask uploadTask = testRef.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -135,7 +135,7 @@ public class WhiteboardActivity extends AppCompatActivity {
     public void saveImage(Bitmap bm){
 
         File file = Environment.getExternalStorageDirectory();
-        File newFile = new File(file, "test_sent.png");
+        File newFile = new File(file, "test_received.png");
 
         try{
             FileOutputStream fileOutputStream = new FileOutputStream(newFile);
@@ -244,7 +244,7 @@ public class WhiteboardActivity extends AppCompatActivity {
         StorageReference gsRef = storage.getReferenceFromUrl("gs://long-distance-contact.appspot.com");
         //StorageReference gsRef = storage.getReferenceFromUrl("https://firebasestorage.googleapis.com/v0/b/long-distance-contact.appspot.com/o/test.png?alt=media&token=30ec2985-bbbe-466a-9915-f717ffbdfcf2");
 
-        gsRef.child("test.png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        gsRef.child("test_received.png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 // Got the download URL for 'users/me/profile.png'
