@@ -113,7 +113,7 @@ public class WhiteboardActivity extends AppCompatActivity {
 
         StorageReference storageRef = storage.getReference();
 
-        StorageReference testRef = storageRef.child("test_sent.png");//works if test.png is saved
+        StorageReference testRef = storageRef.child("test_sent.png");//works if test_sent.png is saved
 
         UploadTask uploadTask = testRef.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
