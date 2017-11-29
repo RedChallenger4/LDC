@@ -49,15 +49,15 @@ public class Event implements Serializable{
     public String toString() {
         if (name != null && desc != null && date != null && startMin != null && startHour != null && endMin != null && endHour!= null) {
             return name + "\n" + dateString() +
-                    "\nStart: " + startHour.toString() + ":" + startMin.toString() +
-                    "\nEnd: " + endHour.toString() + ":" + endMin.toString();
+                    "\nStart: " + startHour.toString() + ":" + startMinString() +
+                    "\nEnd: " + endHour.toString() + ":" + endMinString();
         } else {
             return null;
         }
     }
 
     public String dateString() {
-        SimpleDateFormat fmt = new SimpleDateFormat("MMM d yyyy");
+        SimpleDateFormat fmt = new SimpleDateFormat("MMM d, yyyy");
 
         if (date != null) {
                 Date d = new Date(this.date);
@@ -91,8 +91,14 @@ public class Event implements Serializable{
         this.date = date;
     }
 
-    public int getStartMin() {
-        return startMin;
+    public int getStartMin() {return startMin; }
+
+    public String startMinString() {
+        if (startMin < 10) {
+            return "0" + startMin.toString();
+        } else {
+            return startMin.toString();
+        }
     }
 
     public void setStartMin(int startMin) {
@@ -109,6 +115,14 @@ public class Event implements Serializable{
 
     public int getEndMin() {
         return endMin;
+    }
+
+    public String endMinString() {
+        if (endMin < 10) {
+            return "0" + endMin.toString();
+        } else {
+            return endMin.toString();
+        }
     }
 
     public void setEndMin(int endMin) {

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.Serializable;
 
@@ -29,11 +31,17 @@ public class EventListActivity extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
         if (dbHelper.getData() != null) {
             Cursor data = dbHelper.getData();
-            Event newEvent;
-            ArrayAdapter<Event> eventArray = new ArrayAdapter<>(this, R.layout.activity_event_listview);
+            String newEvent;
+            ArrayAdapter<String> eventArray = new ArrayAdapter<>(this, R.layout.activity_event_listview);
 
             while (data.moveToNext()) {
-                newEvent = new Event(new SpannableStringBuilder(data.getString(1)), new SpannableStringBuilder(data.getString(2)), data.getLong(3), data.getInt(4), data.getInt(5), data.getInt(6), data.getInt(7));
+                newEvent = (new Event(new SpannableStringBuilder(data.getString(1)),
+                            new SpannableStringBuilder(data.getString(2)),
+                            data.getLong(3),
+                            data.getInt(4),
+                            data.getInt(5),
+                            data.getInt(6),
+                            data.getInt(7))).toString();
                 eventArray.add(newEvent);
             }
 
