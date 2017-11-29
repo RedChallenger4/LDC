@@ -135,7 +135,7 @@ public class WhiteboardActivity extends AppCompatActivity {
     public void saveImage(Bitmap bm){
 
         File file = Environment.getExternalStorageDirectory();
-        File newFile = new File(file, "test.png");
+        File newFile = new File(file, "test_sent.png");
 
         try{
             FileOutputStream fileOutputStream = new FileOutputStream(newFile);
