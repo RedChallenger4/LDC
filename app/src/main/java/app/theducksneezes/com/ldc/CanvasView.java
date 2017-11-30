@@ -27,9 +27,15 @@ public class CanvasView extends View {
     private static final float TOLERANCE = 5;
     Context context;
 
+    // guessing around
+    AttributeSet attrs;
+
     public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
+
+        // hope this works
+        this.attrs = attrs;
 
         mPath = new Path();
 
