@@ -27,9 +27,15 @@ public class CanvasView extends View {
     private static final float TOLERANCE = 5;
     Context context;
 
+    // guessing around
+    AttributeSet attrs;
+
     public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
+
+        // hope this works
+        this.attrs = attrs;
 
         mPath = new Path();
 
@@ -50,6 +56,7 @@ public class CanvasView extends View {
 
     }
 
+    // draws on canvas ability
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -57,12 +64,14 @@ public class CanvasView extends View {
         canvas.drawPath(mPath, mPaint);
     }
 
+    // communicates the drawing ability initial
     private void startTouch(float x, float y){
         mPath.moveTo(x, y);
         mX = x;
         mY = y;
     }
 
+    // when user moves the drawing finger
     private void moveTouch(float x, float y){
         float dx = Math.abs(x - mX);
         float dy = Math.abs(y - mY);
@@ -73,11 +82,13 @@ public class CanvasView extends View {
         }
     }
 
+    // clears the canvas
     public void clearCanvas(){
         mPath.reset();
         invalidate();
     }
 
+    // when user lifts up finger
     private void upTouch(){
         mPath.lineTo(mX,mY);
     }

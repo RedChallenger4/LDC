@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.ActionBar;
+
 
 public class DrawerMenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,15 +23,15 @@ public class DrawerMenuActivity extends AppCompatActivity
         setContentView(R.layout.activity_drawer_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.setDrawerListener(toggle);
+//        toggle.syncState();
+//
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
     }
 
     // opens to Go Outside Activity
@@ -87,8 +89,33 @@ public class DrawerMenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.homeButton) {
+            Intent intent = new Intent(getApplicationContext(), DrawerMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_game) {
+            Intent intent = new Intent(getApplicationContext(), GameMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_schedule) {
+            Intent intent = new Intent(getApplicationContext(), CalendarActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_outside) {
+            Intent intent = new Intent(getApplicationContext(), GoOutsideMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_movie) {
+            Intent intent = new Intent(getApplicationContext(), WatchMoviesMainMenuActivity.class );
+            startActivity(intent);
+        } else if (id == R.id.nav_chat) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Chat");
+            startActivity(intent);
+        } else if (id == R.id.nav_call) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Phonecall");
+            startActivity(intent);
+        } else if (id == R.id.nav_video) {
+            Intent intent = new Intent(getApplicationContext(), ConnectActivity.class );
+            intent.putExtra("title", "Videocall");
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

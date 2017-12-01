@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.theducksneezes.com.ldc">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,21 +25,46 @@
             android:name=".DrawerMenuActivity"
             android:label="@string/title_activity_main_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GameMenuActivity" />
-        <activity android:name=".GoOutsideMenuActivity" />
-        <activity android:name=".WatchMoviesMainMenuActivity" />
-        <activity android:name=".WhiteboardActivity" />
-        <activity android:name=".ConnectMenuActivity" />
-        <activity android:name=".DisconnectActivity" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".StartTimeActivity" />
-        <activity android:name=".EndTimeActivity" />
-        <activity android:name=".EventDetailsActivity" />
-        <activity android:name=".EventListActivity" />
+        <activity
+            android:name=".GameMenuActivity"
+            android:label="Games" />
+        <activity
+            android:name=".GoOutsideMenuActivity"
+            android:label="Outdoor Activities"/>
+        <activity
+            android:name=".WatchMoviesMainMenuActivity"
+            android:label="Movies"/>
+        <activity
+            android:name=".WhiteboardActivity"
+            android:label="Whiteboard"/>
+        <activity
+            android:name=".ConnectMenuActivity"
+            android:label="Connect"/>
+        <activity
+            android:name=".DisconnectActivity"
+            android:label="Disconnect"/>
+        <activity
+            android:name=".CalendarActivity"
+            android:label="Calendar"/>
+        <activity
+            android:name=".StartTimeActivity"
+            android:label="Calendar"/>
+        <activity
+            android:name=".EndTimeActivity"
+            android:label="Calendar"/>
+        <activity
+            android:name=".EventDetailsActivity"
+            android:label="Event Details"/>
+        <activity
+            android:name=".EventListActivity"
+            android:label="Scheduled Events"/>
         <activity
             android:name=".ConnectActivity"
             android:label="@string/title_activity_connect"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".EventViewActivity"
+            android:label="Event Info"/>
     </application>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>

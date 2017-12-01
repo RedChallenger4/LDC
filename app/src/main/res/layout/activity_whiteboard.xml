@@ -7,6 +7,8 @@
     android:background="#ffffff"
     tools:context="app.theducksneezes.com.ldc.WhiteboardActivity">
 
+    <!-- replace background attribute w/ image? -->
+
     <app.theducksneezes.com.ldc.CanvasView
         android:layout_width="match_parent"
         android:id="@+id/canvas"
@@ -18,21 +20,50 @@
     android:layout_height="wrap_content"
     android:background="#728073"
     android:layout_alignParentBottom="true"
-    >
+    />
 
     <Button
         android:id="@+id/clearCanvasButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button_rounded"
+        android:layout_alignBaseline="@+id/sendButton"
+        android:layout_alignBottom="@+id/sendButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:onClick="clearCanvas"
-        android:text="Clear Canvas"
-        android:textAllCaps="false"
-        android:textSize="20sp" />
-</LinearLayout>
+        android:text="CLEAR CANVAS" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:onClick="sendImage"
+        android:text="Send" />
+
+    <!-- This button is to sync canvas to see if other user's canvas is made -->
+    <Button
+        android:id="@+id/syncButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:onClick="syncCanvas"
+        android:text="sync" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        android:layout_above="@+id/clearCanvasButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
