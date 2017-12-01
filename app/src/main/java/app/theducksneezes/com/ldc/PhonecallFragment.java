@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -30,21 +31,41 @@ public class PhonecallFragment extends Fragment {
     private static final String TAG = "PhonecallFragment";
 
     private TelephonyManager mTelephonyManager;
-    private String connectedWith;
+    private String connectedWith = "";
+    private View view;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_phonecall, container, false);
+        view = inflater.inflate(R.layout.fragment_phonecall, container, false);
         String[] contactNames = {"Randy Pierce", "Joshua Cadavez", "Anthony Phan", "Anders Zetterlund", "Cassandra Renfrew"};
+        String[] emptyArray = {};
 
         mTelephonyManager = (TelephonyManager) getActivity().getSystemService(getActivity().getApplicationContext().TELEPHONY_SERVICE);
-        ListView listView = view.findViewById(R.id.contacts);
+        setConnectedWith();
+        setListView(view, contactNames);
+        return view;
+
+    }
+
+    private void setConnectedWith() {
+        TextView textView = view.findViewById(R.id.connectedText);
+        if (connectedWith.isEmpty()) {
+            return;
+        } else {
+            String temp = "Connected with\n" + connectedWith;
+            textView.setText(temp);
+        }
+
+    }
+
+    private void setListView(View view, final String[] contacts) {
+        final ListView listView = view.findViewById(R.id.contacts);
 
         ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
-                contactNames
+                contacts
         );
 
         listView.setAdapter(listViewAdapter);
@@ -59,6 +80,7 @@ public class PhonecallFragment extends Fragment {
                     String no = "tel:0000000000";
                     connectedWith = "Randy";
                     startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(no)));
+
                 } else if (position == 1) { //Josh
                     String no = "tel:0000000000";
                     connectedWith = "Josh";
@@ -76,9 +98,9 @@ public class PhonecallFragment extends Fragment {
                     connectedWith = "Andie";
                     startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(no)));
                 }
+                listView.setAdapter(null);
+                setConnectedWith();
             }
         });
-
-        return view;
     }
 }
