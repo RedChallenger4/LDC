@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,10 +39,27 @@ public class PhonecallFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_phonecall, container, false);
-        String[] contactNames = {"Randy Pierce", "Joshua Cadavez", "Anthony Phan", "Anders Zetterlund", "Cassandra Renfrew"};
-        String[] emptyArray = {};
+        final String[] contactNames = {"Randy Pierce", "Joshua Cadavez", "Anthony Phan", "Anders Zetterlund", "Cassandra Renfrew"};
 
         mTelephonyManager = (TelephonyManager) getActivity().getSystemService(getActivity().getApplicationContext().TELEPHONY_SERVICE);
+        PhoneStateListener mPhoneStateListener = new PhoneStateListener() {
+            @Override
+            public void onCallStateChanged(int state, String incomingNumber) {
+                super.onCallStateChanged(state, incomingNumber);
+                switch(state) {
+                    case TelephonyManager.CALL_STATE_IDLE: //ended call
+                        connectedWith = "";
+                        setConnectedWith();
+                        setListView(view, contactNames);
+                        break;
+                    case TelephonyManager.CALL_STATE_OFFHOOK:
+                        break;
+                    case TelephonyManager.CALL_STATE_RINGING:
+                        break;
+                }
+            }
+        };
+        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
         setConnectedWith();
         setListView(view, contactNames);
         return view;
@@ -51,7 +69,7 @@ public class PhonecallFragment extends Fragment {
     private void setConnectedWith() {
         TextView textView = view.findViewById(R.id.connectedText);
         if (connectedWith.isEmpty()) {
-            return;
+            textView.setText("");
         } else {
             String temp = "Connected with\n" + connectedWith;
             textView.setText(temp);
