@@ -1,8 +1,14 @@
 package app.theducksneezes.com.ldc;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,22 +29,16 @@ import java.util.Map;
 public class PhonecallFragment extends Fragment {
     private static final String TAG = "PhonecallFragment";
 
-    private Button btnTest;
+    private TelephonyManager mTelephonyManager;
+    private String connectedWith;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_phonecall, container, false);
-//        Map<String, String> contacts= new LinkedHashMap<>();
-//        contacts.put("Randy Pierce", "0000000000");
-//        contacts.put("Joshua Cadavez", "0000000000");
-//        contacts.put("Tony Phan", "0000000000");
-//        contacts.put("Anders Zetterlund", "0000000000");
-//        contacts.put("Cassandra Renfrew", "0000000000");
-//
-//        String[] contactNames = contacts.keySet().toArray(new String[contacts.keySet().size()]);
         String[] contactNames = {"Randy Pierce", "Joshua Cadavez", "Anthony Phan", "Anders Zetterlund", "Cassandra Renfrew"};
 
+        mTelephonyManager = (TelephonyManager) getActivity().getSystemService(getActivity().getApplicationContext().TELEPHONY_SERVICE);
         ListView listView = view.findViewById(R.id.contacts);
 
         ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
@@ -46,25 +46,35 @@ public class PhonecallFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 contactNames
         );
-//        getActivity(),
-//                android.R.layout.simple_list_item_1,
-//                contacts.keySet().toArray()
 
         listView.setAdapter(listViewAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                if (ActivityCompat.checkSelfPermission(getActivity(), "android.permission.CALL_PHONE") != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{"android.permission.CALL_PHONE", "android.permission.READ_PHONE_STATE"}, 101);
+                    return;
+                }
                 if(position == 0) { //Randy
-                    Toast.makeText(getActivity(), "Randy", Toast.LENGTH_SHORT).show();
+                    String no = "tel:0000000000";
+                    connectedWith = "Randy";
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(no)));
                 } else if (position == 1) { //Josh
-                    Toast.makeText(getActivity(), "Joshua", Toast.LENGTH_SHORT).show();
-
+                    String no = "tel:0000000000";
+                    connectedWith = "Josh";
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(no)));
                 } else if (position == 2) { //Tony
-                    Toast.makeText(getActivity(), "Tony", Toast.LENGTH_SHORT).show();
+                    String no = "tel:0000000000";
+                    connectedWith = "Tony";
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(no)));
                 } else if (position == 3) { //Andy
-
+                    String no = "tel:0000000000";
+                    connectedWith = "Andy";
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(no)));
                 } else if (position == 4) { //Andie
-
+                    String no = "tel:0000000000";
+                    connectedWith = "Andie";
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(no)));
                 }
             }
         });
