@@ -52,7 +52,8 @@ public class PhonecallFragment extends Fragment {
                         setConnectedWith();
                         setListView(view, contactNames);
                         break;
-                    case TelephonyManager.CALL_STATE_OFFHOOK:
+                    case TelephonyManager.CALL_STATE_OFFHOOK: //On call (or waiting for other to pick up)
+                        //TODO: rig this to look nice for poster day?
                         break;
                     case TelephonyManager.CALL_STATE_RINGING:
                         break;
