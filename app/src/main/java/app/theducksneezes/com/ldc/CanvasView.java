@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by redch on 11/16/2017.
@@ -29,6 +30,8 @@ public class CanvasView extends View {
 
     // guessing around
     AttributeSet attrs;
+    boolean status;
+    ImageView imageView;
 
     public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -36,6 +39,8 @@ public class CanvasView extends View {
 
         // hope this works
         this.attrs = attrs;
+        status = false;
+        //imageView = (ImageView) findViewById(R.id.imageView);
 
         mPath = new Path();
 
@@ -60,6 +65,20 @@ public class CanvasView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        /*
+        if (imageView.getDrawable() != null) {
+
+            imageView.buildDrawingCache();
+            Bitmap imageViewBmap = imageView.getDrawingCache();
+            mCanvas = new Canvas(imageViewBmap);
+
+            imageView.setImageResource(0);
+        }*/
+
+        canvas.save();
+        canvas.drawBitmap(mBitmap,0, 0, null);
+        canvas.restore();
 
         canvas.drawPath(mPath, mPaint);
     }
@@ -114,5 +133,26 @@ public class CanvasView extends View {
         }
 
         return true;
+    }
+
+    public void drawOver(){
+
+        /*
+        try {
+            imageView = (ImageView) findViewById(R.id.imageView);
+            imageView.setDrawingCacheEnabled(true);
+            imageView.buildDrawingCache();
+
+            Bitmap imageViewBmap = imageView.getDrawingCache();
+
+            mBitmap = imageViewBmap;
+            invalidate();
+            requestLayout();
+            //Canvas canvas = new Canvas(bitmap);
+            //mCanvas = canvas;
+
+        } catch(Exception e){
+            e.printStackTrace();
+        }*/
     }
 }

@@ -99,6 +99,7 @@ public class WhiteboardActivity extends AppCompatActivity {
         // creates the PNG image
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
 
+
         // array to hold data stream
         byte[] data = baos.toByteArray();
 
@@ -157,6 +158,7 @@ public class WhiteboardActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Handle any errors
+
             }
         });
 
@@ -166,17 +168,26 @@ public class WhiteboardActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
 
         // draws the imageView to canvas
-        imageView.buildDrawingCache();
-        Bitmap imageViewBmap = imageView.getDrawingCache();
+        //imageView.buildDrawingCache();
+
+        //Bitmap bMap = BitmapFactory.decodeResource()
+
+        //imageView.setDrawingCacheEnabled(true);
+        //imageView.buildDrawingCache();
+
+        //Bitmap imageViewBmap = imageView.getDrawingCache();
+        // //canvasView.drawOver();
         //Canvas imageCanvas = new Canvas(imageViewBmap);
 
-        BitmapDrawable drawable = new BitmapDrawable(getResources(), imageViewBmap);
+        //BitmapDrawable drawable = new BitmapDrawable(getResources(), imageViewBmap);
         //canvasView.onDraw(imageCanvas);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             canvasView.setForeground(drawable);
-        }
+        }*/
         //CanvasView canvas = new CanvasView(canvasView.context, canvasView.attrs);
-        //canvas.onDraw(imageCanvas);
+        //canvas.draw(imageCanvas);
+
+        //canvasView = canvas;
 
     }
 
