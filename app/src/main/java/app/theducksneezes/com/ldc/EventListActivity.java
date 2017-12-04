@@ -31,8 +31,8 @@ public class EventListActivity extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
         if (dbHelper.getData() != null) {
             Cursor data = dbHelper.getData();
-            String newEvent;
-            ArrayAdapter<String> eventArray = new ArrayAdapter<>(this, R.layout.activity_event_listview);
+            Event newEvent;
+            ArrayAdapter<Event> eventArray = new ArrayAdapter<>(this, R.layout.activity_event_listview);
 
             while (data.moveToNext()) {
                 newEvent = (new Event(new SpannableStringBuilder(data.getString(1)),
@@ -41,7 +41,7 @@ public class EventListActivity extends AppCompatActivity {
                             data.getInt(4),
                             data.getInt(5),
                             data.getInt(6),
-                            data.getInt(7))).toString();
+                            data.getInt(7)));
                 eventArray.add(newEvent);
             }
 
